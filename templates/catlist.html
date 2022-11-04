@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <title>Cars List</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <script crossorigin="anonymous"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+</head>
+
+<body>
+<h2>Cars List</h2>
+<a class="btn btn-primary" href="addcar">Add New Car</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Color</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+
+    </tr>
+    </thead>
+    {% for cat in cats %}
+    <tr>
+        <td>{{ cat.id }}
+        </th>
+        <td>{{ cat.name }}</td>
+        <td>{{ cat.color }}</td>
+                        <td><a href='updatecat/{{ cat.id }}'>Edit</a></td>
+                <td><a href='deletecat/{{ cat.id }}'>Delete</a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+
+</body>
+</html>
